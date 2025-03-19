@@ -128,44 +128,40 @@ This app can be deployed to cloud platforms like **Render, Heroku, or AWS**.
 ## 💡 API Endpoints <a name="api-endpoints"></a>
 
 ### **Add School**
-- **URL:** `api/addSchool/`
+- **URL:** `/api/addSchool/`
 - **Method:** `POST`
 - **Request Body:**
-  - `name` (required) - School's name
-  - `address` (required) - School's address
-  - `latitude` (required) - School's latitude
-  - `longitude` (required) - School's longitude
+  ```json
+  {
+    "name": "Sunrise High School",
+    "address": "123 Main St, NY",
+    "latitude": 11.9716,
+    "longitude": 77.5946
+  }
+  ```
 - **Example Request:**
   ```sh
-  https://schoolmanagement-y6qb.onrender.com/api/addSchool
+  POST https://schoolmanagement-y6qb.onrender.com/api/addSchool
   ```
-- **Example Request Body:**
-  ```json
- {
-  "name": "Sunrise High School",
-  "address": "123 Main St, NY",
-  "latitude": 11.9716,
-  "longitude": 77.5946
-}
-  ```
-
 - **Example Response:**
   ```json
- {
+  {
     "message": "School added successfully",
     "id": 1
-}
+  }
   ```
 
-  ### **List Nearby Schools**
-- **URL:** `/listSchools/`
+---
+
+### **List Nearby Schools**
+- **URL:** `/api/listSchools/`
 - **Method:** `GET`
 - **Query Parameters:**
   - `latitude` (required) - User's latitude
   - `longitude` (required) - User's longitude
 - **Example Request:**
   ```sh
-  https://schoolmanagement-y6qb.onrender.com/api/listSchools?latitude=37.7749&longitude=-122.4194
+  GET https://schoolmanagement-y6qb.onrender.com/api/listSchools?latitude=37.7749&longitude=-122.4194
   ```
 - **Example Response:**
   ```json
@@ -175,7 +171,7 @@ This app can be deployed to cloud platforms like **Render, Heroku, or AWS**.
       "name": "New York High School",
       "latitude": 37.7749,
       "longitude": -122.4194,
-      "distance": 14103.104049570207
+      "distance": 14103.10
     }
   ]
   ```
@@ -215,3 +211,4 @@ If you like this project, please star ⭐ it!
 This project is **MIT licensed**.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
