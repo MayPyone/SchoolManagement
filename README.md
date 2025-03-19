@@ -128,9 +128,9 @@ This app can be deployed to cloud platforms like **Render, Heroku, or AWS**.
 ## 💡 API Endpoints <a name="api-endpoints"></a>
 
 ### **Add School**
-- **URL:** `/listSchools/`
+- **URL:** `api/addSchool/`
 - **Method:** `POST`
-- **Query Parameters:**
+- **Request Body:**
   - `name` (required) - School's name
   - `address` (required) - School's address
   - `latitude` (required) - School's latitude
@@ -146,6 +146,14 @@ This app can be deployed to cloud platforms like **Render, Heroku, or AWS**.
   "address": "123 Main St, NY",
   "latitude": 11.9716,
   "longitude": 77.5946
+}
+  ```
+
+- **Example Response:**
+  ```json
+ {
+    "message": "School added successfully",
+    "id": 1
 }
   ```
 
