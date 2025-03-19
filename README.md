@@ -1,12 +1,11 @@
-
 # School Management API
 
 <a name="readme-top"></a>
 
-# 📗 Table of Contents
+# 👗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
+- [📝 About the Project](#about-project)
+  - [🛠️ Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
     - [🚀 Live Demo](#live-demo)
@@ -17,40 +16,37 @@
   - [Usage](#usage)
   - [Run tests](#run-tests)
   - [Deployment](#triangular_flag_on_post-deployment)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
+- [👤 Authors](#authors)
+- [💡 API Endpoints](#api-endpoints)
+- [💪 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [📝 License](#license)
+- [⭐ Show your support](#support)
+- [📚 License](#license)
 
-<!-- PROJECT DESCRIPTION -->
+---
 
-# 📖 School Management API <a name="about-project"></a>
+# 📝 School Management API <a name="about-project"></a>
 
-**School Management API** is a Node.js application built using the Express.js framework to manage schools and their details. This API allows users to add new schools, retrieve a list of schools, and sort them based on proximity to a given location (latitude and longitude).
+**School Management API** is a Node.js application built using Express.js to manage schools and their details. The API allows users to add schools, retrieve a list of schools, and sort them based on proximity using latitude and longitude.
 
-The API connects to a MySQL database for storing school data such as name, address, latitude, and longitude.
+The API connects to a MySQL database for storing school data, such as name, address, latitude, and longitude.
 
-## 🛠 Built With <a name="built-with"></a>
+## 🛠️ Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-<details>
-  <summary>Node.js</summary>
-  <ul>
-    <li>Express.js for building the API</li>
-    <li>MySQL for storing school data</li>
-    <li>JavaScript for backend logic</li>
-    <li>Geographical calculations for sorting schools by proximity</li>
-  </ul>
-</details>
+- **Node.js** - Backend runtime environment
+- **Express.js** - Web framework for Node.js
+- **MySQL** - Relational database for storing school data
+- **JavaScript** - Primary backend programming language
+- **Geographical calculations** - Sorting schools by proximity
 
 ### Key Features <a name="key-features"></a>
 
-- **[Add schools]**: Add a new school to the database with required information.
-- **[List schools by proximity]**: Retrieve a list of schools sorted by proximity to a user's location.
-- **[Data validation]**: Ensure proper input validation when adding schools.
-- **[Geographical calculations]**: Sort schools based on geographical distance from the user's provided latitude and longitude.
+- **Add schools**: Add new schools with required information.
+- **List schools by proximity**: Retrieve a list of schools sorted by distance.
+- **Data validation**: Ensure proper input when adding schools.
+- **Geographical calculations**: Sort schools by distance based on provided latitude and longitude.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -60,7 +56,7 @@ The API connects to a MySQL database for storing school data such as name, addre
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- GETTING STARTED -->
+---
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -68,7 +64,7 @@ To get a local copy of this project up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project, you need to install:
+Ensure you have Node.js installed on your system.
 
 ```sh
 npm install
@@ -76,7 +72,7 @@ npm install
 
 ### Setup
 
-Clone this repository to your desired folder:
+Clone this repository:
 
 ```sh
 cd SchoolManagementAPI
@@ -85,7 +81,7 @@ git clone https://github.com/MayPyone/School-Management-API.git
 
 ### Install
 
-Install the project dependencies with:
+Install dependencies:
 
 ```sh
 cd SchoolManagementAPI
@@ -94,17 +90,15 @@ npm install
 
 ### Usage
 
-To run the project, execute the following command:
+Start the server:
 
 ```sh
 npm start
 ```
 
-Visit [http://localhost:3000](http://localhost:3000) in your browser or use Postman for API requests.
-
 ### Run tests
 
-To run tests, use the following command:
+To run tests, execute:
 
 ```sh
 npm test
@@ -114,53 +108,102 @@ npm test
 
 ### Deployment
 
-You can deploy this app to any cloud platform like Heroku, Render, or AWS.
+This app can be deployed to cloud platforms like **Render, Heroku, or AWS**.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- AUTHORS -->
+---
 
-## 👥 Authors <a name="authors"></a>
+## 👤 Authors <a name="authors"></a>
 
-👤 **May Pyone**
+**May Pyone**
 
-- GitHub: [@May Pyone](https://github.com/MayPyone)
+- GitHub: [@MayPyone](https://github.com/MayPyone)
 - LinkedIn: [May Pyone](https://www.linkedin.com/in/may-pyone-9439961a3/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FUTURE FEATURES -->
+---
 
-## 🔭 Future Features <a name="future-features"></a>
+## 💡 API Endpoints <a name="api-endpoints"></a>
 
-- [ ] **[Delete school]**
-- [ ] **[Update school information]**
-- [ ] **[Add search functionality by school name or address]**
+### **Add School**
+- **URL:** `/listSchools/`
+- **Method:** `POST`
+- **Query Parameters:**
+  - `name` (required) - School's name
+  - `address` (required) - School's address
+  - `latitude` (required) - School's latitude
+  - `longitude` (required) - School's longitude
+- **Example Request:**
+  ```sh
+  https://schoolmanagement-y6qb.onrender.com/api/addSchool
+  ```
+- **Example Request Body:**
+  ```json
+ {
+  "name": "Sunrise High School",
+  "address": "123 Main St, NY",
+  "latitude": 11.9716,
+  "longitude": 77.5946
+}
+  ```
+
+  ### **List Nearby Schools**
+- **URL:** `/listSchools/`
+- **Method:** `GET`
+- **Query Parameters:**
+  - `latitude` (required) - User's latitude
+  - `longitude` (required) - User's longitude
+- **Example Request:**
+  ```sh
+  https://schoolmanagement-y6qb.onrender.com/api/listSchools?latitude=37.7749&longitude=-122.4194
+  ```
+- **Example Response:**
+  ```json
+  [
+    {
+      "id": 1,
+      "name": "New York High School",
+      "latitude": 37.7749,
+      "longitude": -122.4194,
+      "distance": 14103.104049570207
+    }
+  ]
+  ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- CONTRIBUTING -->
+---
+
+## 💪 Future Features <a name="future-features"></a>
+
+- [ ] **Delete schools**
+- [ ] **Update school information**
+- [ ] **Search schools by name or address**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
 
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to fork the project, create a branch, and submit a pull request.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+## ⭐ Show your support <a name="support"></a>
+
+If you like this project, please star ⭐ it!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- SUPPORT -->
+---
 
-## ⭐️ Show your support <a name="support"></a>
+## 📚 License <a name="license"></a>
 
-If you like this project, please star ⭐️ it!
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LICENSE -->
-
-## 📝 License <a name="license"></a>
-
-This project is [MIT](./LICENSE) licensed.
+This project is **MIT licensed**.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
