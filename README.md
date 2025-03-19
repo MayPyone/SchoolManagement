@@ -76,7 +76,7 @@ Clone this repository:
 
 ```sh
 cd SchoolManagementAPI
-git clone https://github.com/MayPyone/School-Management-API.git
+git clone https://github.com/MayPyone/SchoolManagement.git
 ```
 
 ### Install
