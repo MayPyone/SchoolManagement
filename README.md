@@ -56,7 +56,7 @@ The API connects to a MySQL database for storing school data such as name, addre
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link (coming soon!)](https://schoolmanagement-y6qb.onrender.com/)
+- [Live Demo Link](https://schoolmanagement-y6qb.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
