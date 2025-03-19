@@ -13,7 +13,7 @@ const addSchool = async (req, res) => {
     db.query(query, [name, address, latitude, longitude], (err, result) => {
         if (err) {
             console.error(err);
-            return res.status(500).json({ message: "Database error" });
+            return res.status(500).json({ message: err.message});
         }
         res.status(201).json({ message: "School added successfully", id: result.insertId });
     });
@@ -43,7 +43,7 @@ const listSchools = async(req, res) => {
     db.query(query, [latitude, longitude, latitude], (err, result) => {
         if (err) {
             console.error(err);
-            return res.status(500).json({ message: "Database error" });
+            return res.status(500).json({ message: err.message });
         }
         if (!result) {
             res.status(200).json({message: "No school was found"}); 
