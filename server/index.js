@@ -17,7 +17,7 @@ app.get('/',async(req,res)=> {
 
 app.use('/api',router)
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 3306
 app.listen(port,()=> {
     console.log("server is starting on port ",port)
 })

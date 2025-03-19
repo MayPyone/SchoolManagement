@@ -45,6 +45,9 @@ const listSchools = async(req, res) => {
             console.error(err);
             return res.status(500).json({ message: "Database error" });
         }
+        if (!result) {
+            res.status(200).json({message: "No school was found"}); 
+        }
         res.status(200).json(result); // Return the sorted list of schools
     });
 };
